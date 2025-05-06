@@ -8,7 +8,7 @@ function ListSorter() {
     useEffect(() => {
         async function fetchRecords() {
             try {
-                const response = await fetch('/KFList/public/KFRecords.json');
+                const response = await fetch(`${import.meta.env.BASE_URL}KFRecords.json`);
                 const data = await response.json();
                 setRecords(data);
             } catch (error) {
@@ -25,7 +25,7 @@ function ListSorter() {
         async function loadLevels() {
             try {
                 const levelPromises = records.Records.map(async (record) => {
-                    const levelInfo = await fetch(`/api/level/${record.ID}`).then(res => res.json());
+                    const levelInfo = await fetch(`https://gdladder.com/api/level/${record.ID}`).then(res => res.json());
                     levelInfo.Player = record.Player; // <-- correctly added here after resolution
                     return levelInfo;
                 });
