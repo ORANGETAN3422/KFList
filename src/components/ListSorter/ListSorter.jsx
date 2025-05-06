@@ -8,7 +8,7 @@ function ListSorter() {
     useEffect(() => {
         async function fetchRecords() {
             try {
-                const response = await fetch('/KFRecords.json');
+                const response = await fetch('/KFList/public/KFRecords.json');
                 const data = await response.json();
                 setRecords(data);
             } catch (error) {
@@ -48,7 +48,9 @@ function ListSorter() {
 
     return (
         <ol className='main-list' >
-            {loadedLevels.map((level, index) => ( <ListItem key={level.ID} data={level} rank={index + 1}/> ))}
+            {loadedLevels.length > 0
+                ? loadedLevels.map((level, index) => (<ListItem key={level.ID + index} data={level} rank={index + 1} />))
+                : (<ListItem key="loading" data="loading" rank="" />)}
         </ol>
     );
 }

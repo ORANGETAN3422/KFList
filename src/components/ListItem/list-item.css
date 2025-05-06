@@ -42,6 +42,12 @@
     font-size: 1.1em;
 }
 
+.load-text {
+    text-align: center;
+    font-size: 4em;
+    text-shadow: 0 0 2px #ffffff1b, 0 0 3px #ffffff1b, 0 0 7px #fffff01b, 0 0 15px #ffffff1b, 0 0 20px #ffffff1b;
+}
+
 .bloom-deg1 {
     text-shadow: 0 0 2px #ffd7003d, 0 0 3px #ffd7003d, 0 0 7px #ffd700aa, 0 0 15px #ffd700, 0 0 20px #ffd700;
     color: #ffe032;
