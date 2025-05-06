@@ -25,8 +25,8 @@ function ListSorter() {
         async function loadLevels() {
             try {
                 const levelPromises = records.Records.map(async (record) => {
-                    const levelInfo = await fetch(`https://gdladder.com/api/level/${record.ID}`).then(res => res.json());
-                    levelInfo.Player = record.Player; // <-- correctly added here after resolution
+                    const levelInfo = await fetch(`https://kf-list-orangetan3422s-projects.vercel.app/api/level/${record.ID}`).then(res => res.json());
+                    levelInfo.Player = record.Player;
                     return levelInfo;
                 });
 
