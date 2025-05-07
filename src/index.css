@@ -4,7 +4,7 @@
   font-family: "Inter", Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #1b2432;
 
@@ -40,6 +40,8 @@ h1 {
   position: absolute;
   left: 60px;
   top: -10px;
+
+  text-wrap: none;
 }
 
 button {
@@ -100,17 +102,4 @@ header {
 ol {
   height: 100vh;
   list-style: none;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

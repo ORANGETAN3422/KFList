@@ -1,11 +1,16 @@
-import ListSorter from './components/ListSorter/ListSorter.jsx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import ListSorter from './components/ListSorter/ListSorter.jsx';
+import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import React, { createContext, useContext, useState } from 'react';
+import { SelectedDataProvider } from './SelectedDataContext';
+
+const SelectedDataContext = createContext();
 
 function App() {
 
   return (
-    <>
+    <SelectedDataProvider>
       <header>
         <FontAwesomeIcon icon={faBars} className='bars' />
         <h1>Karma Farm List - Classic Completions</h1>
@@ -14,7 +19,9 @@ function App() {
       <div className='list-bg'>
         <ListSorter />
       </div>
-    </>
+
+      <BigDisplay />
+      </SelectedDataProvider>
   );
 }
 

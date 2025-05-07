@@ -1,0 +1,47 @@
+section {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+
+    width: calc(100vw - 470px);
+    max-width: 500px;
+    height: 600px;
+
+    position: relative;
+    top: 20px;
+    left: 450px;
+
+    background: #2c2c37;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.main-image {
+    position: absolute;
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 5%;
+
+    border-radius: 5px;
+    box-shadow: 0 0 15px #00000088;
+}
+
+.info-sec {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 11px;
+
+    width: 90%;
+    height: 50%;
+    margin-top: 280px;
+    margin-left: 5%;
+}
+
+.info-sec div {
+    width: 100%;
+    height: 100%;
+}
+
+.victor-title {
+    font-size: 1.3em;
+}

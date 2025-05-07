@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import './list-item.css'
+import { useSelectedData } from '../../SelectedDataContext';
+import './list-item.css';
 
 function ListItem(props) {
     const [extremeInfo, setExtremeInfo] = useState([]);
+    const { setSelectedData } = useSelectedData();
+    const thumbnail = `https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${props.data.ID}.png`
 
     useEffect(() => {
         async function fetchExtremeInfo() {
@@ -16,16 +19,17 @@ function ListItem(props) {
         }
 
         fetchExtremeInfo();
-    }, [props.data !== "loading", props.data.Meta]);
+    }, [props.data]);
     
     return (
 
         <li className='card card-outer'>
+            <input type='button' className='card-hitbox' onClick={() => {setSelectedData([props.data, props.rank]);} } />
             {props.data === "loading" ? <b className='card-title load-text card-inner'>LOADING</b> : (
                 <>
-                    <img src={`https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${props.data.ID}.png`} className="card-image" />
+                    <img src={thumbnail} className="card-image" />
                     <div className='fade-out-con'>
-                        <img src={`https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${props.data.ID}.png`} className="fade-out-image" /> 
+                        <img src={thumbnail} /> 
                     </div>
                     <div className='card-inner'>
                         <b className={`card-title ${props.rank <= 3 ? "bloom-deg" + props.rank : ""}`}>
@@ -37,7 +41,7 @@ function ListItem(props) {
                         <br />
                         {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : console.log("naur")}
                         <div className='thumbnail-con'>
-                            <img src={`https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${props.data.ID}.png`} className="inner-image" /> 
+                            <img src={thumbnail} /> 
                         </div>
                     </div>
                 </>

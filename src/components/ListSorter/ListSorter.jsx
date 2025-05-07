@@ -1,9 +1,11 @@
 import ListItem from '../ListItem/ListItem.jsx';
 import { useEffect, useState } from 'react';
+import { useSelectedData } from '../../SelectedDataContext';
 
 function ListSorter() {
     const [records, setRecords] = useState(null);
     const [loadedLevels, setLoadedLevels] = useState([]);
+    const { setSelectedData } = useSelectedData();
 
     useEffect(() => {
         async function fetchRecords() {
@@ -38,6 +40,7 @@ function ListSorter() {
                 levels.sort(sortNames)
 
                 setLoadedLevels(levels);
+                setSelectedData([levels[0], 1])
             } catch (error) {
                 console.error('Failed to fetch levels:', error);
             }
