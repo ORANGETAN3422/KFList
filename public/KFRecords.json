@@ -4,13 +4,21 @@
         {"ID": 68353244, "Player": "Katovitsa"},
         {"ID": 28220417, "Player": "Henabidus"},
         {"ID": 72164189, "Player": "Soviet Onion"},
-        {"ID": 35448603, "Player": "Wolfoxy"},
-        {"ID": 35448603, "Player": "Error_real"},
-        {"ID": 10565740, "Player": "Timdu78"},
-        {"ID": 10565740, "Player": "MisT"},
-        {"ID": 10565740, "Player": "Trolldemand"},
+        {"ID": 35448603, "Player": "Wolfoxy, Error_real"},
+        {"ID": 10565740, "Player": "Timdu78, MisT, Trolldemand"},
         {"ID": 93752979, "Player": "Zthunder"},
         {"ID": 21280210, "Player": "Lazerlemur"},
-        {"ID": 83658556, "Player": "ORANGETAN"}
+        {"ID": 83658556, "Player": "ORANGETAN"},
+        {"ID": 116579233, "Player": "Sunvoxel"},
+        {"ID": 3979721, "Player": "Shadow69"},
+        {"ID": 87425029, "Player": "HyprDash, Enzigmo"},
+        {"ID": 102385165, "Player": "mwzn"},
+        {"ID": 61079355, "Player": "AGamer, Fulion222, Sleathor500"},
+        {"ID": 62809982, "Player": "Cracker"},
+        {"ID": 73725400, "Player": "SnipeshotGames"},
+        {"ID": 43106353, "Player": "Rstuff"},
+        {"ID": 61137742, "Player": "Aetherim"},
+        {"ID": 75806677, "Player": "J4mi3killa"},
+        {"ID": 59626284, "Player": "Xertun"}
     ]
 }
