@@ -55,7 +55,7 @@ function ListItem(props) {
                         <br />
                         Tier {Math.floor(props.data.Rating)} on GDDL
                         <br />
-                        {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : console.log("naur")}
+                        {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : `${props.data.Meta.Difficulty} Demon`}
                         <div className='thumbnail-con'>
                             <img src={thumbnail} /> 
                         </div>
