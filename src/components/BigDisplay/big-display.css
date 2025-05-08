@@ -16,13 +16,35 @@ section {
 }
 
 .main-image {
+    width: 100%;
+    box-shadow: 0 0 15px #00000088;
+}
+
+.image-con {
     position: absolute;
     width: 90%;
     margin-top: 15px;
     margin-left: 5%;
+    background: rgba(0, 0, 0, 0);
 
     border-radius: 5px;
-    box-shadow: 0 0 15px #00000088;
+    overflow: hidden;
+}
+
+.back-button {
+    position: absolute;
+    border-radius: 5px;
+    top: -2px;
+    left: -2px;
+
+    background: #1d1c29;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+
+    transition: all 0.25s ease-in-out;
+}
+
+.back-button:hover {
+    background: #272536;
 }
 
 .info-sec {
@@ -44,4 +66,28 @@ section {
 
 .victor-title {
     font-size: 1.3em;
+}
+
+.right-div {
+    text-align: right;
+}
+
+.image-overlay {
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 100%, 0 55%);
+    position: absolute;
+    background: #1d1c29;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+
+    width: 70px;
+    height: 70px;
+    bottom: 0;
+    right: 0;
+}
+
+@media only screen and (max-width: 500px){
+    section {
+        display: none;
+        left: 10px;
+        width: 413px;
+    }
 }

@@ -13,7 +13,7 @@ function App() {
     <SelectedDataProvider>
       <header>
         <FontAwesomeIcon icon={faBars} className='bars' />
-        <h1>Karma Farm List - Classic Completions</h1>
+        <h1>Karma Farm List </h1>
       </header>
 
       <div className='list-bg'>

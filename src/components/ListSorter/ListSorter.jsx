@@ -40,7 +40,6 @@ function ListSorter() {
                 levels.sort(sortNames)
 
                 setLoadedLevels(levels);
-                setSelectedData([levels[0], 1])
             } catch (error) {
                 console.error('Failed to fetch levels:', error);
             }

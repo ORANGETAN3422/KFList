@@ -19,12 +19,24 @@ function ListItem(props) {
         }
 
         fetchExtremeInfo();
+        if (props.rank === 1) setSelectedData([props.data, props.rank, extremeInfo]);
     }, [props.data]);
+
+    function buttonClick() {
+        setSelectedData([props.data, props.rank, extremeInfo]);
+        if (window.innerWidth <= 500) {
+            const display = document.querySelector('.big-display');
+            const list = document.querySelector('.list-bg');
+
+            display.style.display = 'grid';
+            list.style.display = 'none';
+        }
+    }
     
     return (
 
         <li className='card card-outer'>
-            <input type='button' className='card-hitbox' onClick={() => {setSelectedData([props.data, props.rank]);} } />
+            <input type='button' className='card-hitbox' onClick={() => {buttonClick()} } />
             {props.data === "loading" ? <b className='card-title load-text card-inner'>LOADING</b> : (
                 <>
                     <img src={thumbnail} className="card-image" />

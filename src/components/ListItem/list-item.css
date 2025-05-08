@@ -4,8 +4,8 @@
     margin-bottom: 10px;
     left: -30px;
     
-    border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 
     overflow: hidden;
     position: relative;
@@ -90,6 +90,13 @@
     left: 0;
     opacity: 0%;
     z-index: 1000;
+    background: #ffffff;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.card-hitbox:hover {
+    opacity: 7.5%;
 }
 
 .load-text {
