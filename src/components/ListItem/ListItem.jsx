@@ -23,13 +23,17 @@ function ListItem(props) {
     }, [props.data]);
 
     function buttonClick() {
+        const display = document.querySelector('.big-display');
+        const list = document.querySelector('.list-bg');
+        
         setSelectedData([props.data, props.rank, extremeInfo]);
         if (window.innerWidth <= 500) {
-            const display = document.querySelector('.big-display');
-            const list = document.querySelector('.list-bg');
-
             display.style.display = 'grid';
             list.style.display = 'none';
+        }
+        else {
+            list.style.display = 'initial';
+            display.style.display = 'grid';
         }
     }
     
