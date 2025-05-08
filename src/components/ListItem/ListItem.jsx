@@ -25,7 +25,7 @@ function ListItem(props) {
     function buttonClick() {
         const display = document.querySelector('.big-display');
         const list = document.querySelector('.list-bg');
-        
+
         setSelectedData([props.data, props.rank, extremeInfo]);
         if (window.innerWidth <= 500) {
             display.style.display = 'grid';
@@ -36,28 +36,32 @@ function ListItem(props) {
             display.style.display = 'grid';
         }
     }
-    
+
     return (
 
         <li className='card card-outer'>
-            <input type='button' className='card-hitbox' onClick={() => {buttonClick()} } />
+            <input type='button' className='card-hitbox' onClick={() => { buttonClick() }} />
             {props.data === "loading" ? <b className='card-title load-text card-inner'>LOADING</b> : (
                 <>
                     <img src={thumbnail} className="card-image" />
                     <div className='fade-out-con'>
-                        <img src={thumbnail} /> 
+                        <img src={thumbnail} />
                     </div>
                     <div className='card-inner'>
-                        <b className={`card-title ${props.rank <= 3 ? "bloom-deg" + props.rank : ""}`}>
-                            <>{props.rank}. </>
-                            {props.data.Player} - {props.data.Meta.Name}
-                        </b>
-                        <br />
-                        Tier {Math.floor(props.data.Rating)} on GDDL
-                        <br />
-                        {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : `${props.data.Meta.Difficulty} Demon`}
+                        <div className='card-title-con'>
+                            <b className={`card-title ${props.rank <= 3 ? "bloom-deg" + props.rank : ""}`}>
+                                <>{props.rank}. </>
+                                {props.data.Player} - {props.data.Meta.Name}
+                            </b>
+                        </div>
+                        <p className='detail-text'>
+                            <br />
+                            Tier {Math.floor(props.data.Rating)} on GDDL
+                            <br />
+                            {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : `${props.data.Meta.Difficulty} Demon`}
+                        </p>
                         <div className='thumbnail-con'>
-                            <img src={thumbnail} /> 
+                            <img src={thumbnail} />
                         </div>
                     </div>
                 </>
