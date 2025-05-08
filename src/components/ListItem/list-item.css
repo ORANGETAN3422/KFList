@@ -130,3 +130,13 @@
     text-shadow: 0 0 2px #ce89463d, 0 0 3px #ce89463d, 0 0 7px #ce89463d, 0 0 15px #ce8946aa, 0 0 20px #ce8946;
     color: #dc954d;
 }
+
+@media only screen and (max-width: 500px){
+    .card {
+        width: 95vw;
+    }
+
+    .thumbnail-con {
+        left: 45vw;
+    }
+  }
