@@ -18,7 +18,9 @@ function ListItem(props) {
             }
         }
 
-        fetchExtremeInfo();
+        if (props.data === "loading") return;
+        
+        if (props.data.Meta.Difficulty === "Extreme") fetchExtremeInfo();
         if (props.rank === 1) setSelectedData([props.data, props.rank, extremeInfo]);
     }, [props.data]);
 

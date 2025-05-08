@@ -1,11 +1,11 @@
 import ListItem from '../ListItem/ListItem.jsx';
+import NonDemonListItem from '../ListItem/NonDemonListItem.jsx'
 import { useEffect, useState } from 'react';
 import { useSelectedData } from '../../SelectedDataContext';
 
 function ListSorter() {
     const [records, setRecords] = useState(null);
     const [loadedLevels, setLoadedLevels] = useState([]);
-    const { setSelectedData } = useSelectedData();
 
     useEffect(() => {
         async function fetchRecords() {
@@ -53,6 +53,10 @@ function ListSorter() {
             {loadedLevels.length > 0
                 ? loadedLevels.map((level, index) => (<ListItem key={level.ID + index} data={level} rank={index + 1} />))
                 : (<ListItem key="loading" data="loading" rank="" />)}
+            {loadedLevels.length > 0 && records && records.NonDemonRecords.length > 0
+                ? records.NonDemonRecords.map((level, index) => (<NonDemonListItem key={index} data={level} rank = {loadedLevels.length + index + 1} />))
+                : ""
+            }
         </ol>
     );
 }
