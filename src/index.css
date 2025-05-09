@@ -35,12 +35,12 @@ body {
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2.15em;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   
   position: absolute;
   left: 63px;
-  top: -10px;
+  top: -9px;
 
   text-wrap: none;
 }
@@ -92,7 +92,7 @@ header {
   height: 39px;
 
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-top-right-radius: 18.5px;
   border-bottom-right-radius: 18.5px;
