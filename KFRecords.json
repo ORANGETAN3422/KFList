@@ -47,5 +47,10 @@
         {"ID": 114678316, "Player": "Playkie"},
         {"ID": 94734132, "Player": "Storm28"},
         {"ID": 1347537, "Player": "Marill"}
+    ],
+    "NonDemonRecords": [
+        {"Name": "Monsters", "Player": "Antonabi"},
+        {"Name": "Aperture", "Player": "Velvetago"},
+        {"Name": "Polargeist", "Player": "Smoliv"}
     ]
 }
