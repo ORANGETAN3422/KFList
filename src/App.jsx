@@ -1,5 +1,6 @@
 import ListSorter from './components/ListSorter/ListSorter.jsx';
 import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
+import Credits from './components/Credits/Credits.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import React, { createContext, useContext, useState } from 'react';
@@ -21,6 +22,7 @@ function App() {
       </div>
 
       <BigDisplay />
+      <Credits />
       </SelectedDataProvider>
   );
 }

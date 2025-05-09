@@ -1,0 +1,42 @@
+.credits-section {
+    width: 300px;
+    height: 400px;
+
+    background: #2c2c37;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
+    position: absolute;
+    top: 90px;
+    left: 970px;
+
+    text-align: center;
+}
+
+.credits-section .title {
+    margin-top: 15px;
+    font-size: 1.25em;
+    text-shadow: 0 0 2px #c0c0c03d, 0 0 3px #c0c0c03d, 0 0 7px #c0c0c03d, 0 0 15px #c0c0c03d, 0 0 20px #c0c0c0aa;
+}
+
+.credits-section .description {
+    width: 100%;
+    top: 37px;
+}
+
+.text-con {
+    margin-left: 2.5%;
+    width: 95%;
+    margin-top: -10px;
+}
+
+.gh-img {
+    width: 30px;
+    filter: drop-shadow(0 0 10px #c0c0c0aa);
+}
+
+@media only screen and (max-width: 940px) {
+    .credits-section {
+        display: none;
+    }
+}
