@@ -103,6 +103,7 @@
 
 .card-hitbox:hover {
     opacity: 7.5%;
+    cursor: pointer;
 }
 
 .load-text {

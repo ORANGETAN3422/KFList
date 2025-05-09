@@ -48,12 +48,12 @@ function BigDisplay() {
                 <div className='info-sec'>
                     <div>
                         <b className={(selectedData[1] <= 3 ? `bloom-deg${selectedData[1]}` : "") + " victor-title"}>
-                            {`#${selectedData[1]} - ${selectedData[0].Player}`}
+                            {`#${selectedData[1]}`} - {`${selectedData[0].Player}`}
                         </b>
                         <br /><br />
                         Tier {Math.floor(selectedData[0].Rating)} on GDDL
                         <br />
-                        #{selectedData[2] ? selectedData[2].position : "???"} on AREDL
+                        {(selectedData[2].position ? "#" + selectedData[2].position + " on AREDL" : selectedData[0].Meta.Difficulty + " Demon")}
                         <p className='description'>
                             <i>{selectedData[0].Meta.Description}</i>
                         </p>
@@ -66,6 +66,14 @@ function BigDisplay() {
                         <a href={`https://www.newgrounds.com/audio/listen/${selectedData[0].Meta.Song.ID}`} target='_blank'>
                             Level Song
                         </a>
+                        {selectedData[0].Video ? (
+                            <>
+                                <br /> <br />
+                                <a href={selectedData[0].Video} target='_blank'>
+                                    Completion Video
+                                </a>
+                            </>
+                        ) : ""}
                         <br /> <br />
                         ID: {selectedData[0].ID}
                         <br /> <br />

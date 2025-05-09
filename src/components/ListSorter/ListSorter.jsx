@@ -29,6 +29,7 @@ function ListSorter() {
                 const levelPromises = records.Records.map(async (record) => {
                     const levelInfo = await fetch(`https://kf-list-orangetan3422s-projects.vercel.app/api/level/${record.ID}`).then(res => res.json());
                     levelInfo.Player = record.Player;
+                    levelInfo.Video = record.Video ? record.Video : "";
                     return levelInfo;
                 });
 
