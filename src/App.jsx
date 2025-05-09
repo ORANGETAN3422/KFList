@@ -13,7 +13,9 @@ function App() {
   return (
     <SelectedDataProvider>
       <header>
-        <FontAwesomeIcon icon={faBars} className='bars' />
+        {/*<FontAwesomeIcon icon={faBars} className='bars' />*/}
+        <img src={`${import.meta.env.BASE_URL}gd-reddit-icon.png`} className='icon' />
+        <div className='underline-deco'></div>
         <h1>Karma Farm List </h1>
       </header>
 

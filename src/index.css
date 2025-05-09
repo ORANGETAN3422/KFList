@@ -39,7 +39,7 @@ h1 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   
   position: absolute;
-  left: 60px;
+  left: 63px;
   top: -10px;
 
   text-wrap: none;
@@ -76,13 +76,30 @@ header {
   z-index: 100;
 }
 
-.bars {
+.icon {
   position: absolute;
-  top: 20px;
+  top: 16px;
   left: 15px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 
-  font-size: 30px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.underline-deco {
+  width: 315px;
+  height: 39px;
+
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 18.5px;
+  border-bottom-right-radius: 18.5px;
+
+  top: 16px;
+  left: 32px;
+  z-index: -1;
 }
 
 .list-bg {
