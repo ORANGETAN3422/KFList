@@ -58,7 +58,7 @@ function ListItem(props) {
                         </div>
                         <p className='detail-text'>
                             <br />
-                            Tier {Math.floor(props.data.Rating)} on GDDL
+                            Tier {Math.round(props.data.Rating)} on GDDL
                             <br />
                             {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : `${props.data.Meta.Difficulty} Demon`}
                         </p>
