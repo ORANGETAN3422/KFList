@@ -19,7 +19,7 @@ function ExpandedCredits() {
                     Demon Tiers provided by <a href="https://gdladder.com/" target="_blank">GDDL</a> <br />
                     Level thumbnails provided by cdc's <a href='https://github.com/cdc-sys/level-thumbnails' target="_blank">Level Thumbnails Mod</a> <br />
                     <br />
-                    Made in <a href="https://react.dev/" target="_blank">React</a> + <a href="https://vite.dev/" target="_blank">Vite</a> 
+                    Made in <a href="https://react.dev/" target="_blank">React</a> + <a href="https://vite.dev/n" target="_blank">Vite</a> 
                 </div>
             </div>
         </div>

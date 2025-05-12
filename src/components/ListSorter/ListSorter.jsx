@@ -10,7 +10,7 @@ function ListSorter() {
     useEffect(() => {
         async function fetchRecords() {
             try {
-                const response = await fetch(`https://gist.githubusercontent.com/ORANGETAN3422/4c63c842e0e52e3ccb69aba71811675a/raw/bb618f3442fa1b27a5551582542389ab24d9900a/KFRecords.json`);
+                const response = await fetch(`https://gist.githubusercontent.com/ORANGETAN3422/4c63c842e0e52e3ccb69aba71811675a/raw/KFRecords.json`);
                 const data = await response.json();
                 setRecords(data);
             } catch (error) {
