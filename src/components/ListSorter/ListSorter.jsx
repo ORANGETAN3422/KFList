@@ -1,7 +1,6 @@
 import ListItem from '../ListItem/ListItem.jsx';
 import NonDemonListItem from '../ListItem/NonDemonListItem.jsx'
 import { useEffect, useState } from 'react';
-import { useSelectedData } from '../../SelectedDataContext';
 
 function ListSorter() {
     const [records, setRecords] = useState(null);

@@ -15,6 +15,12 @@ function ExpandedCredits() {
                 <h3 className="extras-title">Other</h3>
                 <div className="extra-text-con">
                     <hr />
+                    Levels in this list are provided by the members of the Karma Farm Discord server. 
+                    <b> They are ordered by GDDL rating, not AREDL rankings. </b>
+                    Positions of demon rated levels cannot be changed if you disagree with their positions. 
+                    <b> I cannot change these rankings, so please do not try and ask me to. </b>
+                    If you have any suggestions, or find any bugs, please DM me on discord. 
+                    <hr />
                     Extreme Demon Rankings provided by <a href="https://aredl.net" target="_blank">AREDL</a> <br />
                     Demon Tiers provided by <a href="https://gdladder.com/" target="_blank">GDDL</a> <br />
                     Level thumbnails provided by cdc's <a href='https://github.com/cdc-sys/level-thumbnails' target="_blank">Level Thumbnails Mod</a> <br />
