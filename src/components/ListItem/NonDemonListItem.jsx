@@ -1,7 +1,7 @@
 import './list-item.css';
 
 function NonDemonListItem(props) {
-const thumbnail = `https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${props.data.ID}.png`
+const thumbnail = `https://tjcsucht.net/levelthumbs/${props.data.ID}.png`
 
     return (
         <li className='card card-outer'>
