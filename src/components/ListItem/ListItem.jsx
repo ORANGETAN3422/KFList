@@ -5,7 +5,7 @@ import './list-item.css';
 function ListItem(props) {
     const [extremeInfo, setExtremeInfo] = useState([]);
     const { setSelectedData } = useSelectedData();
-    const thumbnail = `https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${props.data.ID}.png`
+    const thumbnail = `https://tjcsucht.net/levelthumbs/${props.data.ID}.png`
 
     useEffect(() => {
         async function fetchExtremeInfo() {

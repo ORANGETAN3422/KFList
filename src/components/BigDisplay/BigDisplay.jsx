@@ -9,7 +9,7 @@ function BigDisplay() {
     function updateVariables(data) {
         loadedImageThumb = "";
         if (selectedData === null) return;
-        loadedImageThumb = `https://raw.githubusercontent.com/cdc-sys/level-thumbnails/main/thumbs/${data[0].ID}.png`;
+        loadedImageThumb = `https://tjcsucht.net/levelthumbs/${data[0].ID}.png`
     }
 
     function buttonClick() {
