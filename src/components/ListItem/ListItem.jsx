@@ -10,7 +10,7 @@ function ListItem(props) {
     useEffect(() => {
         async function fetchExtremeInfo() {
             try {
-                const response = await fetch(`https://api.aredl.net/api/aredl/levels/${props.data.ID}`);
+                const response = await fetch(`https://kf-list-orangetan3422s-projects.vercel.app/api/aredl/levels/${props.data.ID}`);
                 const data = await response.json();
                 setExtremeInfo(data);
             } catch (error) {
