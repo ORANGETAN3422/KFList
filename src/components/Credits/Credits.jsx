@@ -18,13 +18,14 @@ function Credits() {
                 <p className='description'>a collection of the hardest levels completed by the Geometry Dash Karma Farm Team </p>
                 <br /><br />
                 <div className='text-con'>
-                    <span>Website developed by <b>ORANGETAN</b> </span> <hr /> <br />
+                    <span>Website developed by <b>ORANGETAN</b></span>  <hr /> <br />
                     <span>Original list organised by <b>Henabidus</b></span> <hr /> <br />
                     <span>Karma Farm hosted by <b>Crackermanuel</b></span> <hr />
                 </div>
                 <div className='more-credits'>
                     <img src={`${import.meta.env.BASE_URL}more-icon.png`} className='more-img' onClick={() => EnableOverlay()}/>
                     <a href='https://github.com/ORANGETAN3422/KFList' target='_blank'><img src={`${import.meta.env.BASE_URL}github.png`} className='gh-img' /></a>
+                    <a href='https://orangetan3422.github.io/' target='_blank'><img src={`${import.meta.env.BASE_URL}cube_23.png`} className='orang' /></a>
                 </div>
             </section>
         </>

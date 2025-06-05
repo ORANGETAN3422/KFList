@@ -118,6 +118,13 @@
     text-shadow: 0 0 2px #c0c0c03d, 0 0 3px #c0c0c03d, 0 0 7px #c0c0c03d, 0 0 15px #c0c0c03d, 0 0 20px #c0c0c0aa;
 }
 
+.orang {
+    width: 30px;
+    height: auto;
+
+    filter: drop-shadow(0 0 10px #c0c0c0aa) grayscale(100%) brightness(40%);
+}
+
 @media only screen and (max-width: 940px) {
     .credits-section {
         display: none;
