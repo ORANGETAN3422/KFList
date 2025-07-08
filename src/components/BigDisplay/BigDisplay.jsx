@@ -39,7 +39,7 @@ function BigDisplay() {
                 </div>
                 <div className='title-overlay'>
                     {selectedData
-                        ? (<b className='bloom-deg2'> {selectedData[0].Meta.Name} by {selectedData[0].Meta.Creator} </b>)
+                        ? (<b> {selectedData[0].Meta.Name} by {selectedData[0].Meta.Creator} </b>)
                         : ""}
                 </div>
                 <div className='title-overlay-2'></div>
