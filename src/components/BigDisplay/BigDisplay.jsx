@@ -53,7 +53,7 @@ function BigDisplay() {
                         <br /><br />
                         Tier {Math.round(selectedData[0].Rating)} on GDDL
                         <br />
-                        {(selectedData[2].position ? "#" + selectedData[2].position + " on AREDL" : selectedData[0].Meta.Difficulty + " Demon")}
+                        {(selectedData[2] ? "#" + selectedData[2].position + " on AREDL" : selectedData[0].Meta.Difficulty + " Demon")}
                         <p className='description'>
                             <i>{selectedData[0].Meta.Description}</i>
                         </p>
