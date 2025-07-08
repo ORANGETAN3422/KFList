@@ -4,9 +4,8 @@ import ListItem from "../ListItem/ListItem.jsx";
 import NonDemonListItem from "../ListItem/NonDemonListItem.jsx";
 
 import { useEffect, useState } from "react";
-import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 
-function ListSorter() {
+function MainListSorter() {
     const [records, setRecords] = useState(null);
     const [loadedLevels, setLoadedLevels] = useState([]);
 
@@ -125,4 +124,4 @@ function ListSorter() {
     );
 }
 
-export default ListSorter;
+export default MainListSorter;

@@ -1,6 +1,9 @@
-import ListSorter from './components/ListSorter/ListSorter.jsx';
+import ListSorter from './components/ListSorter/MainListSorter.jsx';
+import PlatformerListSorter from './components/ListSorter/PlatformerListSorter.jsx'
+
 import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
 import Credits from './components/Credits/Credits.jsx';
+
 import ExpandedCredits from './components/Credits/ExpandedCredits.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +20,17 @@ function App() {
     }
   }
 
+  let currentList = "platformer";
+
+  function setActiveList() {
+    if (currentList === "classic") {
+      return(<ListSorter />);
+    }
+    else if (currentList === "platformer") {
+      return(<PlatformerListSorter />)
+    }
+  }
+
   return (
     <SelectedDataProvider>
       <header>
@@ -30,7 +44,7 @@ function App() {
       </header>
 
       <div className='list-bg'>
-        <ListSorter />
+        {setActiveList()}
       </div>
 
       <BigDisplay />

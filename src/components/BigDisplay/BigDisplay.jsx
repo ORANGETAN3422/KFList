@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useSelectedData } from '../../SelectedDataContext';
 import './big-display.css';
 
