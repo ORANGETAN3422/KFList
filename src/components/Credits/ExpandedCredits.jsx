@@ -16,7 +16,8 @@ function ExpandedCredits() {
                 <div className="extra-text-con">
                     <hr />
                     Levels in this list are provided by the members of the Karma Farm Discord server. 
-                    <b> They are ordered by GDDL rating, not AREDL rankings. </b>
+                    <b> Extreme demons are ordered by their position on <a href="https://aredl.net" target="_blank">AREDL</a>. </b>
+                    <b> Other demon levels are ranked by rating on <a href="https://gdladder.com/" target="_blank">GDDL</a>. </b>
                     Positions of demon rated levels cannot be changed if you disagree with their positions. 
                     <b> I cannot change these rankings, so please do not try and ask me to. </b>
                     If you have any suggestions, or find any bugs, please DM me on discord. 

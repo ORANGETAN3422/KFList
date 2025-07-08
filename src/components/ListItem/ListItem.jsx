@@ -3,32 +3,20 @@ import { useSelectedData } from '../../SelectedDataContext';
 import './list-item.css';
 
 function ListItem(props) {
-    const [extremeInfo, setExtremeInfo] = useState([]);
     const { setSelectedData } = useSelectedData();
     const thumbnail = `https://tjcsucht.net/levelthumbs/${props.data.ID}.png`
 
     useEffect(() => {
-        async function fetchExtremeInfo() {
-            try {
-                const response = await fetch(`https://kf-list-orangetan3422s-projects.vercel.app/api/aredl/levels/${props.data.ID}`);
-                const data = await response.json();
-                setExtremeInfo(data);
-            } catch (error) {
-                console.error('Fetch error:', error);
-            }
+        if (props.rank === 1 && props.data !== "loading") {
+            setSelectedData([props.data, props.rank, props.data.ExtremeInfo]);
         }
-
-        if (props.data === "loading") return;
-        
-        if (props.data.Meta.Difficulty === "Extreme") fetchExtremeInfo();
-        if (props.rank === 1) setSelectedData([props.data, props.rank, extremeInfo]);
-    }, [props.data]);
+    }, [props.rank, props.data, setSelectedData]);
 
     function buttonClick() {
         const display = document.querySelector('.big-display');
         const list = document.querySelector('.list-bg');
 
-        setSelectedData([props.data, props.rank, extremeInfo]);
+        setSelectedData([props.data, props.rank, props.data.ExtremeInfo]);
         if (window.innerWidth <= 500) {
             display.style.display = 'grid';
             list.style.display = 'none';
@@ -60,7 +48,7 @@ function ListItem(props) {
                             <br />
                             Tier {Math.round(props.data.Rating)} on GDDL
                             <br />
-                            {props.data.Meta.Difficulty === "Extreme" ? (`#${extremeInfo.position} on AREDL`) : `${props.data.Meta.Difficulty} Demon`}
+                            {props.data.Meta.Difficulty === "Extreme" ? (`#${props.data.ExtremeInfo.position} on AREDL`) : `${props.data.Meta.Difficulty} Demon`}
                         </p>
                         <div className='thumbnail-con'>
                             <img src={thumbnail} />
