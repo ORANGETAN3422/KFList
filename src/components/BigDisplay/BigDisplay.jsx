@@ -50,9 +50,13 @@ function BigDisplay() {
                             {`#${selectedData[1]}`} - {`${selectedData[0].Player}`}
                         </b>
                         <br /><br />
-                        Tier {Math.round(selectedData[0].Rating)} on GDDL
+                        {selectedData[3] === "classic"
+                            ? `Tier ${Math.round(selectedData[0].Rating)} on GDDL`
+                            : `${Math.round(selectedData[0].Enjoyment * 10) / 10} on GDDL`}
                         <br />
-                        {(selectedData[2] ? "#" + selectedData[2].position + " on AREDL" : selectedData[0].Meta.Difficulty + " Demon")}
+                        {selectedData[3] === "classic"
+                            ? ((selectedData[2] ? "#" + selectedData[2].position + " on AREDL" : selectedData[0].Meta.Difficulty + " Demon"))
+                            : ("#" + selectedData[2].placement + " on pemonlist")}
                         <p className='description'>
                             <i>{selectedData[0].Meta.Description}</i>
                         </p>

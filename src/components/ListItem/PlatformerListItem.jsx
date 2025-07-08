@@ -8,7 +8,7 @@ function PlatformerListItem(props) {
 
     useEffect(() => {
         if (props.rank === 1 && props.data !== "loading") {
-            setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null]);
+            setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null], "platformer");
         }
     }, [props.rank, props.data, setSelectedData]);
 
@@ -16,7 +16,7 @@ function PlatformerListItem(props) {
         const display = document.querySelector('.big-display');
         const list = document.querySelector('.list-bg');
 
-        setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null]);
+        setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null], "platformer");
         if (window.innerWidth <= 500) {
             display.style.display = 'grid';
             list.style.display = 'none';
@@ -28,7 +28,6 @@ function PlatformerListItem(props) {
     }
 
     return (
-
         <li className='card card-outer'>
             <input type='button' className='card-hitbox' onClick={() => { buttonClick() }} />
             {props.data === "loading" ? <b className='card-title load-text card-inner'>LOADING</b> : (
@@ -45,10 +44,9 @@ function PlatformerListItem(props) {
                             </b>
                         </div>
                         <p className='detail-text'>
+                            {Math.round(props.data.Enjoyment * 10) / 10} enjoyment on GDDL
                             <br />
-                            Tier {Math.round(props.data.Rating)} on GDDL
-                            <br />
-                            #{props.data.PlatformerInfo} on pemonlist
+                            #{props.data.PlatformerInfo.placement} on pemonlist
                         </p>
                         <div className='thumbnail-con'>
                             <img src={thumbnail} />

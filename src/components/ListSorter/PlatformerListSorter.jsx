@@ -56,7 +56,7 @@ function PlatformerListSorter() {
                         levelInfo.PlatformerInfo = platformerInfo;
                     } catch (error) {
                         console.error(
-                            `Failed to fetch Extreme info for level ${record.ID}:`,
+                            `Failed to fetch platformer info for level ${record.ID}:`,
                             error
                         );
                     }
@@ -67,15 +67,7 @@ function PlatformerListSorter() {
                 const levels = await Promise.all(levelPromises);
 
                 levels.sort((a, b) => {
-                    const aIsExtreme = a.Meta?.Difficulty === "Extreme";
-                    const bIsExtreme = b.Meta?.Difficulty === "Extreme";
-
-                    if (aIsExtreme && bIsExtreme) {
-                        return a.PlatformerInfo?.ranking - b.PlatformerInfo?.ranking;
-                    }
-                    if (aIsExtreme && !bIsExtreme) return -1;
-                    if (!aIsExtreme && bIsExtreme) return 1;
-                    return b.Rating - a.Rating;
+                    return a.PlatformerInfo?.placement - b.PlatformerInfo?.placement;
                 });
 
                 setLoadedLevels(levels);
