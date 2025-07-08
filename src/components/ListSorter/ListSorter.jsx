@@ -4,6 +4,7 @@ import ListItem from "../ListItem/ListItem.jsx";
 import NonDemonListItem from "../ListItem/NonDemonListItem.jsx";
 
 import { useEffect, useState } from "react";
+import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 
 function ListSorter() {
     const [records, setRecords] = useState(null);
@@ -88,7 +89,7 @@ function ListSorter() {
                     }
                     if (aIsExtreme && !bIsExtreme) return -1;
                     if (!aIsExtreme && bIsExtreme) return 1;
-                    return a.Rating - b.Rating;
+                    return b.Rating - a.Rating;
                 });
 
                 setLoadedLevels(levels);
@@ -119,6 +120,7 @@ function ListSorter() {
                         rank={loadedLevels.length + index + 1}
                     />
                 ))}
+                <li style={{height: '20px'}}></li>
         </ol>
     );
 }
