@@ -1,39 +1,60 @@
-import React, { useState } from 'react';
-import ListSorter from './components/ListSorter/MainListSorter.jsx';
+import React, { useState, useEffect } from "react";
+
+import { fetchPlatformerData } from './helpers/fetchPlatformerData';
+import { fetchMainListData } from './helpers/fetchMainListData';
+import { SelectedDataProvider } from './SelectedDataContext';
+
+import MainListSorter from './components/ListSorter/MainListSorter.jsx';
 import PlatformerListSorter from './components/ListSorter/PlatformerListSorter.jsx';
+import SkeletonList from "./components/ListSorter/SkeletonList.jsx";
 
 import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
 import Credits from './components/Credits/Credits.jsx';
+import ListItem from "./components/ListItem/ListItem.jsx";
 
-import { SelectedDataProvider } from './SelectedDataContext';
+import './index.css';
 
 function App() {
   const [currentList, setCurrentList] = useState("platformer");
+  const [platformerData, setPlatformerData] = useState(null);
+  const [mainListData, setMainListData] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
-  const [classicData, setClassicData] = useState(null);
-  const [platformerData, setPlatformerData] = useState(null);
-
-  const [loading, setLoading] = useState(false);
-
-  function EnableOverlay() {
-    const blackout = document.querySelector('.blackout');
-    if (blackout) {
-      blackout.style.display = 'flex';
+  useEffect(() => {
+    async function loadData() {
+      if (currentList === "platformer" && !platformerData) {
+        setLoading(true);
+        const data = await fetchPlatformerData();
+        setPlatformerData(data);
+        setLoading(false);
+      }
+      if (currentList === "classic" && !mainListData) {
+        setLoading(true);
+        const data = await fetchMainListData();
+        setMainListData(data);
+        setLoading(false);
+      }
     }
-  }
-
-  function renderActiveList() {
-    if (currentList === "classic") {
-      return <ListSorter />;
-    } else if (currentList === "platformer") {
-      return <PlatformerListSorter />;
-    }
-  }
+    loadData();
+  }, [currentList]);
 
   function handleSelect(list) {
     setCurrentList(list);
     setDropdownVisible(false);
+  }
+
+  function renderActiveList() {
+    if (loading) return <SkeletonList />;
+
+    if (currentList === "platformer" && platformerData) {
+      return <PlatformerListSorter data={platformerData} />;
+    }
+    if (currentList === "classic" && mainListData) {
+      return <MainListSorter data={mainListData} />;
+    }
+
+    return <SkeletonList />;
   }
 
   return (
@@ -54,19 +75,17 @@ function App() {
 
       <div className="list-bg">
         <button className="drop-btn" onClick={() => setDropdownVisible(!dropdownVisible)}>
-          Switch List
+          Change List
         </button>
 
-        {dropdownVisible && (
-          <div className="dropdown-menu">
-            <button className="dropdown-item" onClick={() => handleSelect('classic')}>
-              Classic
+          <div className={"dropdown-menu " + (dropdownVisible === true ? "dropdown-visible" : "")}>
+            <button className={"dropdown-item " + `${currentList === "classic" ? "active-list" : ""}`} onClick={() => handleSelect('classic')}>
+              Classic List
             </button>
-            <button className="dropdown-item" onClick={() => handleSelect('platformer')}>
-              Platformer
+            <button className={"dropdown-item " + `${currentList === "platformer" ? "active-list" : ""}`} onClick={() => handleSelect('platformer')}>
+              Platformer List
             </button>
           </div>
-        )}
 
         {renderActiveList()}
       </div>
