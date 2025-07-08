@@ -16,7 +16,7 @@ function ListItem(props) {
         const display = document.querySelector('.big-display');
         const list = document.querySelector('.list-bg');
 
-        setSelectedData([props.data, props.rank, props.data.ExtremeInfo]);
+        setSelectedData([props.data, props.rank, props.data.ExtremeInfo.position]);
         if (window.innerWidth <= 500) {
             display.style.display = 'grid';
             list.style.display = 'none';
