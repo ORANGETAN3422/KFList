@@ -10,16 +10,16 @@ import SkeletonList from "./components/ListSorter/SkeletonList.jsx";
 
 import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
 import Credits from './components/Credits/Credits.jsx';
-import ListItem from "./components/ListItem/ListItem.jsx";
 
 import './index.css';
 
 function App() {
-  const [currentList, setCurrentList] = useState("platformer");
+  const [currentList, setCurrentList] = useState("classic");
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
   const [platformerData, setPlatformerData] = useState(null);
   const [mainListData, setMainListData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     async function loadData() {
