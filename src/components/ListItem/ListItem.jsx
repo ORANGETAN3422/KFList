@@ -8,7 +8,7 @@ function ListItem(props) {
 
     useEffect(() => {
         if (props.rank === 1 && props.data !== "loading") {
-            setSelectedData([props.data, props.rank, props.data.ExtremeInfo ? props.data.ExtremeInfo : null], "classic");
+            setSelectedData([props.data, props.rank, props.data.ExtremeInfo ? props.data.ExtremeInfo : null, "classic"]);
         }
     }, [props.rank, props.data, setSelectedData]);
 
@@ -16,7 +16,7 @@ function ListItem(props) {
         const display = document.querySelector('.big-display');
         const list = document.querySelector('.list-bg');
 
-        setSelectedData([props.data, props.rank, props.data.ExtremeInfo ? props.data.ExtremeInfo : null], "classic");
+        setSelectedData([props.data, props.rank, props.data.ExtremeInfo ? props.data.ExtremeInfo : null, "classic"]);
         if (window.innerWidth <= 500) {
             display.style.display = 'grid';
             list.style.display = 'none';

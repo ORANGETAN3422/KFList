@@ -40,10 +40,10 @@ h1 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   position: absolute;
-  left: 63px;
-  top: -9px;
-
-  text-wrap: none;
+  line-height: 0px;
+  top: -3.5px;
+  left: 35px;
+  width: 100%;
 }
 
 button {
@@ -90,8 +90,9 @@ header {
 }
 
 .underline-deco {
-  width: 315px;
+  width: 330px;
   height: 39px;
+  text-wrap: nowrap;
 
   position: absolute;
   background: rgba(0, 0, 0, 0.3);
@@ -99,9 +100,13 @@ header {
   border-top-right-radius: 18.5px;
   border-bottom-right-radius: 18.5px;
 
+  overflow: hidden;
+
   top: 16px;
   left: 32px;
   z-index: -1;
+
+  transition: .6s ease-in-out;
 }
 
 .list-bg {
@@ -163,6 +168,18 @@ header {
 
 .dropdown-visible {
   opacity: 100%;
+}
+
+.dropdown-arrow {
+ rotate: 0deg;
+ transition: .4s all ease-out;
+ margin-left: -5px;
+ padding-left: 5px;
+ padding-right: 5px;
+}
+
+.arrow-rotated {
+  rotate: -180deg;
 }
 
 ol {

@@ -11,10 +11,14 @@ import SkeletonList from "./components/ListSorter/SkeletonList.jsx";
 import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
 import Credits from './components/Credits/Credits.jsx';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+
 import './index.css';
 
 function App() {
   const [currentList, setCurrentList] = useState("classic");
+  const [titleText, setTitleText] = useState("Karma Farm List");
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const [platformerData, setPlatformerData] = useState(null);
@@ -39,9 +43,23 @@ function App() {
     loadData();
   }, [currentList]);
 
-  function handleSelect(list) {
-    setCurrentList(list);
+  function animateTitleChange(list) {
+    document.querySelector('.underline-deco').style.width = "0";
+    document.querySelector('.underline-deco').style.color = "rgba(255, 255, 255, 0)"
+    setTimeout(() => {
+      if (list === "classic") setTitleText("Karma Farm List");
+      else if (list === "platformer") setTitleText("Platformer List")
+
+      document.querySelector('.underline-deco').style.width = "330px";
+      document.querySelector('.underline-deco').style.color = "rgba(255, 255, 255, 1)"
+    }, 600);
+  }
+
+  function handleSelect(list) { 
     setDropdownVisible(false);
+    if (list === currentList) return;
+    animateTitleChange(list);
+    setCurrentList(list);
   }
 
   function renderActiveList() {
@@ -60,32 +78,26 @@ function App() {
   return (
     <SelectedDataProvider>
       <header>
-        {/*<FontAwesomeIcon icon={faBars} className='bars' />*/}
         <img src={`${import.meta.env.BASE_URL}gd-reddit-icon.png`} className='icon' />
-        <div className='underline-deco'></div>
-        <h1>Karma Farm List</h1>
-        <div className='top-bar-extras'>
-          <img
-            src={`${import.meta.env.BASE_URL}more-icon.png`}
-            className='more-img'
-            onClick={() => EnableOverlay()}
-          />
+        <div className='underline-deco'>
+          <h1>{titleText}</h1>
         </div>
       </header>
 
       <div className="list-bg">
         <button className="drop-btn" onClick={() => setDropdownVisible(!dropdownVisible)}>
+          <FontAwesomeIcon icon={faCaretDown} className={"dropdown-arrow " + (dropdownVisible ? "arrow-rotated" : "")} />
           Change List
         </button>
 
-          <div className={"dropdown-menu " + (dropdownVisible === true ? "dropdown-visible" : "")}>
-            <button className={"dropdown-item " + `${currentList === "classic" ? "active-list" : ""}`} onClick={() => handleSelect('classic')}>
-              Classic List
-            </button>
-            <button className={"dropdown-item " + `${currentList === "platformer" ? "active-list" : ""}`} onClick={() => handleSelect('platformer')}>
-              Platformer List
-            </button>
-          </div>
+        <div className={"dropdown-menu " + (dropdownVisible === true ? "dropdown-visible" : "")}>
+          <button className={"dropdown-item " + `${currentList === "classic" ? "active-list" : ""}`} onClick={() => handleSelect('classic')}>
+            Classic List
+          </button>
+          <button className={"dropdown-item " + `${currentList === "platformer" ? "active-list" : ""}`} onClick={() => handleSelect('platformer')}>
+            Platformer List
+          </button>
+        </div>
 
         {renderActiveList()}
       </div>

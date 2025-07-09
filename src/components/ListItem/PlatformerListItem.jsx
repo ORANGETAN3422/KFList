@@ -8,7 +8,7 @@ function PlatformerListItem(props) {
 
     useEffect(() => {
         if (props.rank === 1 && props.data !== "loading") {
-            setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null], "platformer");
+            setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null, "platformer"]);
         }
     }, [props.rank, props.data, setSelectedData]);
 
@@ -16,7 +16,7 @@ function PlatformerListItem(props) {
         const display = document.querySelector('.big-display');
         const list = document.querySelector('.list-bg');
 
-        setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null], "platformer");
+        setSelectedData([props.data, props.rank, props.data.PlatformerInfo ? props.data.PlatformerInfo : null, "platformer"]);
         if (window.innerWidth <= 500) {
             display.style.display = 'grid';
             list.style.display = 'none';
