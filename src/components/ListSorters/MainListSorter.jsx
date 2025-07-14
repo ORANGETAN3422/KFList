@@ -21,4 +21,3 @@ function MainListSorter({ data }) {
   );
 }
 export default MainListSorter;
-

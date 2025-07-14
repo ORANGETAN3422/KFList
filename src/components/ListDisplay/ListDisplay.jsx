@@ -14,7 +14,6 @@ function ListDisplay(props) {
     function handleDropdownSelect(list) {
         if (list === props.currentList) return;
         toggleDropdownMenu();
-        
         props.onListChange(list);
     }
 
@@ -56,7 +55,6 @@ function ListDisplay(props) {
                 <FontAwesomeIcon icon={faCaretDown} className={"dropdown-arrow " + (dropdownVisible ? "arrow-rotated" : "")} />
                 Change List
             </button>
-
 
             <div className="dropdown-menu">
                 {createDropdownButton("classic")}

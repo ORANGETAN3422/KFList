@@ -1,6 +1,6 @@
 import SkeletonItem from '../ListItems/SkeletonItem.jsx'
 
-function SkeletonList({ data }) {
+function SkeletonList() {
   return (
     <ol className="main-list">
       {Array.from({ length: 10 }, (_, i) => (

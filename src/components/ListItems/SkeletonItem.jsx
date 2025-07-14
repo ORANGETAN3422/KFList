@@ -1,6 +1,6 @@
 import './list-item.css';
 
-function SkeletonItem(props) {
+function SkeletonItem() {
     return (
         <li className='card card-outer'>
             <div className='card-inner skeleton-con'>
