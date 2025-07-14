@@ -4,22 +4,15 @@ import { fetchPlatformerData } from './helpers/fetchPlatformerData';
 import { fetchMainListData } from './helpers/fetchMainListData';
 import { SelectedDataProvider } from './SelectedDataContext';
 
-import MainListSorter from './components/ListSorter/MainListSorter.jsx';
-import PlatformerListSorter from './components/ListSorter/PlatformerListSorter.jsx';
-import SkeletonList from "./components/ListSorter/SkeletonList.jsx";
-
-import BigDisplay from './components/BigDisplay/BigDisplay.jsx';
-import Credits from './components/Credits/Credits.jsx';
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import ListDisplay from "./components/ListDisplay/ListDisplay.jsx";
+import BigDisplay from './components/DetailsDisplay/DetailsDisplay.jsx';
+import Credits from './components/CreditsDisplay/CreditsDisplay.jsx';
 
 import './index.css';
 
 function App() {
   const [currentList, setCurrentList] = useState("classic");
   const [titleText, setTitleText] = useState("Karma Farm List");
-  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const [platformerData, setPlatformerData] = useState(null);
   const [mainListData, setMainListData] = useState(null);
@@ -44,35 +37,28 @@ function App() {
   }, [currentList]);
 
   function animateTitleChange(list) {
-    document.querySelector('.underline-deco').style.width = "0";
-    document.querySelector('.underline-deco').style.color = "rgba(255, 255, 255, 0)"
+    const underlineDeco = document.querySelector('.underline-deco')
+    const icon = document.querySelector('.icon')
+    const widthStyles = { "collapsed": "0", "open": "330px" }
+    const colorStyles = { "collapsed": "rgba(255, 255, 255, 0)", "open": "rgba(255, 255, 255, 1)" }
+
+    underlineDeco.style.width = widthStyles.collapsed;
+    underlineDeco.style.color = colorStyles.collapsed;
+    icon.classList.add('spin');
     setTimeout(() => {
-      if (list === "classic") setTitleText("Karma Farm List");
-      else if (list === "platformer") setTitleText("Platformer List")
+      setTitleText(list === "classic" ? "Karma Farm List" : "Platformer List");
 
-      document.querySelector('.underline-deco').style.width = "330px";
-      document.querySelector('.underline-deco').style.color = "rgba(255, 255, 255, 1)"
+      underlineDeco.style.width = widthStyles.open
+      underlineDeco.style.color = colorStyles.open
     }, 600);
+    setTimeout(() => {
+      icon.classList.remove('spin');
+    }, 1200);
   }
 
-  function handleSelect(list) { 
-    setDropdownVisible(false);
-    if (list === currentList) return;
-    animateTitleChange(list);
+  const handleListChange = (list) => {
     setCurrentList(list);
-  }
-
-  function renderActiveList() {
-    if (loading) return <SkeletonList />;
-
-    if (currentList === "platformer" && platformerData) {
-      return <PlatformerListSorter data={platformerData} />;
-    }
-    if (currentList === "classic" && mainListData) {
-      return <MainListSorter data={mainListData} />;
-    }
-
-    return <SkeletonList />;
+    animateTitleChange(list);
   }
 
   return (
@@ -84,23 +70,13 @@ function App() {
         </div>
       </header>
 
-      <div className="list-bg">
-        <button className="drop-btn" onClick={() => setDropdownVisible(!dropdownVisible)}>
-          <FontAwesomeIcon icon={faCaretDown} className={"dropdown-arrow " + (dropdownVisible ? "arrow-rotated" : "")} />
-          Change List
-        </button>
-
-        <div className={"dropdown-menu " + (dropdownVisible === true ? "dropdown-visible" : "")}>
-          <button className={"dropdown-item " + `${currentList === "classic" ? "active-list" : ""}`} onClick={() => handleSelect('classic')}>
-            Classic List
-          </button>
-          <button className={"dropdown-item " + `${currentList === "platformer" ? "active-list" : ""}`} onClick={() => handleSelect('platformer')}>
-            Platformer List
-          </button>
-        </div>
-
-        {renderActiveList()}
-      </div>
+      <ListDisplay
+        loading={loading}
+        currentList={currentList}
+        platformerData={platformerData}
+        mainListData={mainListData}
+        onListChange={handleListChange}
+      />
 
       <BigDisplay />
       <Credits />

@@ -1,5 +1,5 @@
-import './credits.css';
-import ExpandedCredits from './ExpandedCredits.jsx';
+import './credits-display.css';
+import ExpandedCredits from './ExpandedCreditsDisplay.jsx';
 
 function Credits() {
     function EnableOverlay() {

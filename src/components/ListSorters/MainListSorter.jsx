@@ -1,5 +1,5 @@
-import ListItem from "../ListItem/ListItem.jsx";
-import NonDemonListItem from "../ListItem/NonDemonListItem.jsx";
+import ListItem from "../ListItems/ListItem.jsx";
+import NonDemonListItem from "../ListItems/NonDemonListItem.jsx";
 
 function MainListSorter({ data }) {
   const { levels, nonDemonRecords } = data;

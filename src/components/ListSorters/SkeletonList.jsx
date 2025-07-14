@@ -1,4 +1,4 @@
-import SkeletonItem from '../ListItem/SkeletonItem.jsx'
+import SkeletonItem from '../ListItems/SkeletonItem.jsx'
 
 function SkeletonList({ data }) {
   return (

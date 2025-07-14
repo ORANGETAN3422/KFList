@@ -1,5 +1,3 @@
-
-
 function ExpandedCredits() {
     function DisableOverlay() {
         const blackout = document.querySelector('.blackout');

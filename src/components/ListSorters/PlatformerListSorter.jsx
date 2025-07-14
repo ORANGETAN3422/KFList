@@ -1,4 +1,4 @@
-import PlatformerListItem from '../ListItem/PlatformerListItem'
+import PlatformerListItem from '../ListItems/PlatformerListItem'
 
 function PlatformerListSorter({ data }) {
   return (

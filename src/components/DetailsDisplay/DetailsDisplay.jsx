@@ -1,5 +1,5 @@
 import { useSelectedData } from '../../SelectedDataContext';
-import './big-display.css';
+import './details-display.css';
 
 function BigDisplay() {
     const { selectedData } = useSelectedData();
