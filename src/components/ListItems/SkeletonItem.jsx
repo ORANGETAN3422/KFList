@@ -15,4 +15,4 @@ function SkeletonItem() {
     );
 }
 
-export default SkeletonItem
+export default SkeletonItem;

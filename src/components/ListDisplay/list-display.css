@@ -1,3 +1,8 @@
+ol {
+  height: 100vh;
+  list-style: none;
+}
+
 .list-bg {
   position: absolute;
   width: 430px;

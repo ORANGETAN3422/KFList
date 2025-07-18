@@ -28,4 +28,4 @@ function NonDemonListItem({ data, rank }) {
     );
 }
 
-export default NonDemonListItem
+export default NonDemonListItem;

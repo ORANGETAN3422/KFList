@@ -35,17 +35,6 @@ body {
   overflow-y: hidden;
 }
 
-h1 {
-  font-size: 2.15em;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-  position: absolute;
-  line-height: 0px;
-  top: -3.5px;
-  left: 35px;
-  width: 100%;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -61,76 +50,6 @@ button {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-header {
-  width: 100%;
-  height: 70px;
-
-  border-bottom: #121420 solid 1px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  background: #403f4c;
-  margin: 0;
-
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
-
-.icon {
-  position: absolute;
-  top: 16px;
-  left: 15px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-}
-
-.icon.spin {
-  animation: rotate360 1.2s ease-out infinite;
-}
-
-@keyframes rotate360 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.underline-deco {
-  width: 330px;
-  height: 39px;
-  text-wrap: nowrap;
-
-  position: absolute;
-  background: rgba(0, 0, 0, 0.3);
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
-  border-top-right-radius: 18.5px;
-  border-bottom-right-radius: 18.5px;
-
-  overflow: hidden;
-
-  top: 16px;
-  left: 32px;
-  z-index: -1;
-
-  transition: .6s ease-in-out;
-}
-
-ol {
-  height: 100vh;
-  list-style: none;
-}
-
-.top-bar-extras {
-  position: absolute;
-  top: 19px;
-  left: 350px;
-  opacity: 50%;
 }
 
 @media only screen and (max-width: 500px) {
